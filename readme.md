@@ -112,61 +112,7 @@ To generate custom fake data, see [`Data/Fake_data_generation.ipynb`](Data/Fake_
 
 ---
 
-## 🚀 Quick Start
 
-### 1. Extract Embeddings
-
-Extract 512-dimensional embeddings from pre-trained MetFoundation:
-
-```bash
-jupyter notebook 1_embedding_extraction.ipynb
-```
-
-**Key steps:**
-- Load pre-trained model weights from `Model_Weights/MetFoundation/`
-- Process metabolomics data in batches
-- Extract CLS token embeddings
-- Save outputs: `.npy`, `.csv`, and `.pkl` formats
-
-### 2. Predict Mortality Risk & Age Acceleration
-
-Use fine-tuned model for survival analysis:
-
-```bash
-jupyter notebook 2_mortality_risk_age_acceleration.ipynb
-```
-
-**Outputs:**
-- Mortality risk scores (Cox proportional hazards)
-- Age acceleration (biological age gap in years)
-- Risk stratification and visualization
-
-### 3. Classify Metabolic Subtypes
-
-Identify metabolic phenotypes using pre-trained classifier:
-
-```bash
-jupyter notebook 3_metabolic_subtype.ipynb
-```
-
-**Outputs:**
-- Subtype predictions (fine-grained and meta-subtypes)
-- Subtype distributions across cohorts
-- Disease association analysis
-
-### 4. Lightweight Model Inference
-
-Fast inference using distilled model:
-
-```bash
-jupyter notebook 4_lighweight_usage.ipynb
-```
-
-**Advantages:**
-- Combines embedding extraction, risk prediction, and subtype classification
-- Suitable for large-scale deployment
-
----
 
 ## 🏗️ Model Architecture
 
@@ -215,8 +161,8 @@ Lightweight MetFoundation (<1M parameters)
 - Dropout: 0.1
 
 ---
-
-## 📓 Demo Notebooks
+## 🚀 Quick Start
+### 📓 Demo Notebooks
 
 | Notebook | Description | Input | Output |
 |----------|-------------|-------|--------|
@@ -414,8 +360,7 @@ This project is licensed under [LICENSE_TYPE] - see the [LICENSE](LICENSE) file 
 
 For questions and feedback:
 
-- **Primary Contact**: [Name] ([Email])
-- **Lab/Institution**: [Institution Name]
+- **Primary Contact**: Yu Xu (email: csyuxu@comp.hkbu.edu.hk)
 - **Project Website**: [Website URL]
 - **Issues**: Please use [GitHub Issues]([ISSUES_URL]) for bug reports and feature requests
 
@@ -431,5 +376,5 @@ For questions and feedback:
 
 --- -->
 
-**Last Updated**: [DATE]  
+**Last Updated**: [12/March/2026]  
 **Version**: [pre-version]
