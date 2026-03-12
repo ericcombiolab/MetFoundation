@@ -294,17 +294,6 @@ MetFoundation/
 
 ---
 
-## 📊 Performance Benchmarks
-
-| Task | Metric | Full Model | Lightweight Model |
-|------|--------|------------|-------------------|
-| **Mortality Prediction** | C-index | [FILL_IN] | [FILL_IN] |
-| **Age Acceleration** | Correlation with age | [FILL_IN] | [FILL_IN] |
-| **Metabolic Subtype** | Accuracy | [FILL_IN] | [FILL_IN] |
-| **Inference Speed** | Samples/sec | [FILL_IN] | [FILL_IN] |
-| **Model Size** | Parameters | 19.3M | <1M |
-
----
 
 ## 💡 Use Cases
 
