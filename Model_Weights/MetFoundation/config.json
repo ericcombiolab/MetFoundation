@@ -1,0 +1,12 @@
+{
+    "n_heads": 8,
+    "n_blocks": 6,
+    "d_ff": 2048,
+    "d_model": 512,
+    "dropout": 0.1,
+    "activation": "relu",
+    "need_weights": true,
+    "average_attn_weights": true,
+    "attn_mode": "mixdirect_mask",
+    "n_params": 19277785
+}
