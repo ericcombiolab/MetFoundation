@@ -1,0 +1,19 @@
+{
+    "loss_mode": "contrastive",
+    "temperature": 0.2, 
+    "alpha": 0.01,
+    "cox_weight":0.01,
+    "emb_weight":1,
+    "lr": 0.0001,
+    "batch_size": 512,
+    "n_epoch": 300,
+    "n_toler": 10,
+    "drop_out": 0.1,
+    "d_model": 512,
+    "data_path": "../Data/Blood_dataset_fullcohort_107nonderived_mlm",
+    "risk_head_path": "../MetaboLM_Finetuned_Mortality/fullcohort_107nonderived_mlm",
+    "save_dir":"../MetaboLM_Distilled_Lightweight",
+    "save_note":"fullcohort_107nonderived_mlm_InfoNCE"
+}
+
+

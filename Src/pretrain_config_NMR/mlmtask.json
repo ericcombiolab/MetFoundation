@@ -1,0 +1,24 @@
+{
+    "lr": 0.0001,
+    "batch_size": 128,
+    "n_epoch": 300,
+    "n_toler": 10,
+    "max_mr": 0.8,
+    "f_gamma": "cosine",
+    "f_loss": "MAE",
+    "attn_mode": "mixdirect_mask",
+    "drop_out": 0.1,
+    "n_heads": 8,
+    "n_blocks": 6,
+    "d_ff": 2048,
+    "d_model": 512,
+    "f_act": "relu",
+    "data_path": "../Data/NMR_dataset_fullcohort_107nonderived",
+    "save_dir":"../MetaboLM_Pretrained_NMR", 
+    "save_note": "fullcohort_107nonderived_mlm",
+    "wandb_monitor": true,
+    "multi_task":false,
+    "alpha":0.9
+}
+
+
