@@ -174,53 +174,50 @@ Lightweight MetFoundation (<1M parameters)
 
 ---
 
-## 🧪 Training & Evaluation
-**! The source code for this part is still sorting；coming soon**
+## 🧪 Training 
+
 ### Pre-training
 
-Pre-train MetFoundation on metabolomics data using masked language modeling:
+Pre-train MetFoundation on metabolomics data using masked language modeling with multi-task learning:
 
 ```bash
-python Src/pretrain_UKBNMR.py \
-    --config Src/pretrain_config_NMR/mlmtask.json \
-    --data_path Data/UKB_NMR/train.h5ad \
-    --output_dir Model_Weights/MetFoundation \
-    --epochs 100 \
-    --batch_size 256 \
-    --learning_rate 1e-4
+python Src/pretrain_UKBNMR.py --train_config Src/pretrain_config_NMR/mlmtask.json
 ```
 
-**Pre-training objectives:**
-- Masked metabolite concentration prediction (MAE loss)
+**Pre-training configuration** 
+[mlmtask.json](./Src/pretrain_config_NMR/mlmtask.json)
 
-### Fine-tuning for Survival Analysis
 
-Fine-tune pre-trained model for mortality prediction:
+
+### Fine-tuning for Survival Module
+
+Fine-tune a survival module for mortality risk prediction using the pre-trained embeddings:
 
 ```bash
 python Src/finetune_UKBNMR_Mortality.py \
-    --pretrained_model Model_Weights/MetFoundation/model_weights.pth \
-    --data_path Data/UKB_NMR/train.h5ad \
-    --output_dir Model_Weights/SurvivalModule \
-    --epochs 50 \
-    --batch_size 128
+    --model_dir ./Pretrained_Weights/Demo_Pre_Train \
+    --save_dir ./Finetuned_Weights/Demo_Fine_Tune \
+    --data_path ./Data/UKB_Blood \
+    --batch_size 4096
 ```
 
-**Loss function:** Cox proportional hazards loss with age embedding fusion
+**Pre-trained embeddings**
+- Input: Metabolomic embeddings from `obsm['metabolomic embedding']` were generated using the pre-trained MetFoundation
+
 
 ### Model Distillation
 
-Train lightweight model by distilling from pre-trained MetFoundation:
+Train lightweight model by distilling knowledge from pre-trained MetFoundation:
 
 ```bash
-python Src/distill_lightweight.py \
-    --config Src/distill_config/blood_Distill.json \
-    --teacher_model Model_Weights/MetFoundation/model_weights.pth \
-    --data_path Data/UKB_Blood/train.h5ad \
-    --output_dir Model_Weights/Lightweight
+python Src/distill_lightweight.py --train_config Src/distill_config/blood_Distill.json
 ```
 
-### Evaluation
+**Distillation configuration** 
+[blood_Distill.json](./Src/distill_config/blood_Distill.json)
+
+
+<!-- ### Evaluation
 
 Evaluate fine-tuned models on validation sets:
 
@@ -234,7 +231,7 @@ python Src/eval_Mortality_UKB.py \
 python Src/eval_Distilled_UKB.py \
     --model_path Model_Weights/Lightweight/model_weights.pth \
     --data_path Data/UKB_Blood/val.h5ad
-```
+``` -->
 
 ---
 
@@ -275,18 +272,9 @@ MetFoundation/
 │   │   └── mask_utils.py                  # Masking strategies
 │   │
 │   ├── pretrain_UKBNMR.py                 # Pre-training script
-│   ├── finetune_UKBNMR_Mortality.py       # Fine-tuning for survival
+│   ├── finetune_UKBNMR_Mortality.py       # Fine-tuning for survival module
 │   ├── distill_lightweight.py             # Model distillation
-│   ├── eval_Mortality_UKB.py              # Evaluate survival model
-│   ├── eval_Distilled_UKB.py              # Evaluate distilled model
-│   ├── eval_NMR_UKB.py                    # Evaluate on NMR data
-│   ├── eval_UKBNMR_distilled.py           # Cross-evaluate distilled model
 │   └── utils.py                           # Utility functions
-│
-├── Demo_output/                            # Example outputs
-│   ├── val_embeddings.npy                 # Sample embeddings
-│   ├── metabolic_subtype_predictions.csv  # Subtype predictions
-│   └── charls_2011_comprehensive_results_lightweight.csv
 │
 ├── environment_cpu.yml                     # Conda environment (CPU)
 └── readme.md                               # This file
@@ -364,5 +352,5 @@ For questions and feedback:
 
 --- -->
 
-**Last Updated**: [12/March/2026]  
+**Last Updated**: [25/March/2026]  
 **Version**: [pre-version]

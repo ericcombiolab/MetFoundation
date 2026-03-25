@@ -13,10 +13,10 @@
     "d_ff": 2048,
     "d_model": 512,
     "f_act": "relu",
-    "data_path": "../Data/NMR_dataset_fullcohort_107nonderived",
-    "save_dir":"../MetaboLM_Pretrained_NMR", 
-    "save_note": "fullcohort_107nonderived_mlm",
-    "wandb_monitor": true,
+    "data_path": "../Data/UKB_NMR",
+    "save_dir":"../Pretrained_Weights", 
+    "save_note": "Demo_Pre_Train",
+    "wandb_monitor": false,
     "multi_task":false,
     "alpha":0.9
 }
