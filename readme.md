@@ -1,5 +1,5 @@
 # MetFoundation: Decoding heterogeneous aging clocks and disease risk stratification using a metabolomic foundation model
-[![License](https://img.shields.io/badge/License-[LICENSE_TYPE]-blue.svg)]([LICENSE_URL])
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.3](https://img.shields.io/badge/pytorch-2.3-orange.svg)](https://pytorch.org/)
 
@@ -320,7 +320,7 @@ If you use MetFoundation in your research, please cite:
 
 ## 📄 License
 
-This project is licensed under [LICENSE_TYPE] - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 

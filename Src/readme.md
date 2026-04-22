@@ -1,1 +1,1 @@
-The files of the source code for training/evaluation are sorting
+Source code for pre-training, fine-tuning, and distillation
